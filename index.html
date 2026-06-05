@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AO3 Tag Dice 🎲</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 AO3 Tag Dice</h1>
+        <p class="subtitle">随机生成 tag 组合，灵感不枯竭</p>
+
+        <!-- 主控制按钮 -->
+        <div class="controls">
+            <button onclick="rollAll()">🎲 完整 Roll</button>
+            <button onclick="clearCard()">🗑 清空</button>
+        </div>
+
+        <!-- 预设按钮容器 -->
+        <div class="controls" id="presets">
+            <span style="color:#666; font-size:14px; line-height:40px;">预设模式：</span>
+        </div>
+
+        <!-- 结果卡片 -->
+        <div class="card" id="resultCard">
+            <h2>点击「完整 Roll」生成 Tag 组合</h2>
+            <div class="tags-grid" id="tagsContainer"></div>
+        </div>
+
+        <!-- 输出和操作 -->
+        <div class="output-section">
+            <div class="output-label">结果（可复制）</div>
+            <textarea id="output" readonly placeholder="Roll 结果会显示在这里"></textarea>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="actions">
+            <button onclick="copyToClipboard()">📋 复制</button>
+            <button class="btn-secondary" onclick="reroll()">🔄 重新 Roll</button>
+        </div>
+
+        <!-- 说明 -->
+        <div class="json-info">
+            <p>💡 扩展说明：修改 <code>tags.json</code> 中的维度和 tag 即可，无需修改前端代码</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
